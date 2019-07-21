@@ -1,0 +1,28 @@
+{
+  "name": "naruto-info-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfurfles/naruto-info-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kfurfles/naruto-info-api/issues"
+  },
+  "scripts":{
+    "scrapping": "node extract-data/characters-list.js && node extract-data/character-infos.js "
+  },
+  "homepage": "https://github.com/kfurfles/naruto-info-api#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "jsdom": "^15.1.1",
+    "lodash": "^4.17.15"
+  }
+}
