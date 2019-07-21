@@ -29,7 +29,7 @@ async function segregationData(dom){
     var heads = {};
     var actualHead = '';
     thList.map((th,idx) => {
-        let actual = th.innerHTML.split('\n').join('').trim()
+        let actual = th.innerHTML.split('\n').join('').trim().replace(' ','').toLowerCase()
         if(!actualHead && th.classList.contains('mainheader')){
             actualHead = actual
         } else if(actualHead && th.classList.contains('mainheader')){
