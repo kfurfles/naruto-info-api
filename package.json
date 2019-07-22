@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "seed": "node seed/index.js",
+    "setup": "npm run scrapping && npm run seed",
+    "scrapping": "node extract-data/characters-list.js && node extract-data/character-infos.js "
   },
   "repository": {
     "type": "git",
@@ -16,13 +19,18 @@
   "bugs": {
     "url": "https://github.com/kfurfles/naruto-info-api/issues"
   },
-  "scripts":{
-    "scrapping": "node extract-data/characters-list.js && node extract-data/character-infos.js "
-  },
   "homepage": "https://github.com/kfurfles/naruto-info-api#readme",
   "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.1",
+    "@hapi/vision": "^5.5.2",
     "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "hapi-swagger": "9.1.3",
     "jsdom": "^15.1.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "mongodb": "^3.3.0-beta2",
+    "mongoose": "^5.6.5",
+    "open": "^6.4.0"
   }
 }

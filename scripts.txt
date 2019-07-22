@@ -1,0 +1,19 @@
+# Módulo 5 - Bancos de Dados - Nosso projeto Multi-banco de dados
+
+- Trabalhando com o padrão Strategy para Multi DataSources
+
+## Instalando docker para usar o MongoDB
+
+## ---- MONGODB
+docker run \
+    --name mongodb \
+    -p 27017:27017 \
+    -e MONGO_INITDB_ROOT_USERNAME=admin \
+    -e MONGO_INITDB_ROOT_PASSWORD=123456 \
+    -d \
+    mongo:4
+
+docker exec -it mongodb \
+    mongo --host localhost -u admin -p 123456 --authenticationDatabase admin \
+    --eval "db.getSiblingDB('characters').createUser({user: 'admin', pwd: '123456', roles: [{role: 'readWrite', db: 'characters'}]})"
+```
